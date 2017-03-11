@@ -1,36 +1,20 @@
-/** {
-  border: 1px dashed blue;
-}*/
-
 body {
-  background-color: orange;
+  background-color: #000;
 }
 
-/*#flex-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-self: center;
-    flex-wrap: wrap;
-    align-content: center;
-    height: 300px;
-    width: 400px;
-    border: 2px dashed #fff;
-}*/
-
 .play-button {
-  background-color: grey;
-  color: #fff;
-  margin: auto;
+  background-color: #fff;
+  color: #000;
+  margin: 3px;
   padding: 10px;
-  border: none;
-  box-sizing: border-box;
+  border: 1px dashed #fff;
+  /*box-sizing: border-box;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
   align-self: auto;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: wrap;*/
 }
 
 .flex-container {
@@ -42,16 +26,14 @@ body {
     align-items: center;
 }
 .message-box {
-  font-size: 3em;
-  color: blue;
+  font-size: 4em;
+  color: #fff;
 }
-
-
 
 .outer {
 width: 500px;
 height: 500px;
-background-color: pink;
+background-color: #000;
 display: flex;
 border: 1px dashed #fff;
 }
@@ -59,7 +41,18 @@ border: 1px dashed #fff;
 .inner {
 width: 400px;
 height: 400px;
-background-color: green;
+background-color: #000;
 margin: auto;
 border: 1px dashed #fff;
 }
+
+/*#flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-self: center;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 300px;
+    width: 400px;
+}*/
