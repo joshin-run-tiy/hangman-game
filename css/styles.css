@@ -24,10 +24,22 @@ body {
     justify-content: center;
     align-content: center;
     align-items: center;
+    float: left;
 }
+
 .message-box {
   font-size: 4em;
   color: #fff;
+}
+
+.letters-guessed {
+  font-size: 3em;
+  color: #fff;
+  border-color: #000;
+  padding: 10px;
+  height: 300px;
+  width: 300px;
+  border: 1px dashed #fff;
 }
 
 .outer {

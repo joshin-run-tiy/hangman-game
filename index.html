@@ -12,9 +12,13 @@
     <div class="outer flex-container">
       <div class="inner flex-container">
         <!-- <p class="message-box flex-container" id="message">Change Me</p> -->
-        <span id="msg" class="message-box flex-container">Message</span>
+        <p id="msg" class="message-box flex-container">Message</p>
       </div>
-      <button id="button" onclick="chooseWord()" class="play-button flex-container">Play Game</button>
+      <button id="button" onclick="chooseWord()" class="play-button flex-container">Choose Word</button>
+      <!-- <button onclick="guess()" class="play-button flex-container">Guess</button> -->
+    </div>
+    <div class="flex-container">
+      <p id="letters-guessed-box" class="letters-guessed flex-container">Guessed</p>
     </div>
     <script src="./js/common-words.js"></script>
     <script src="./js/main.js"></script>
