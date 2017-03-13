@@ -2,38 +2,43 @@ function random() {
   return Math.floor(Math.random() * 100);
 }
 
-function generateWord() {
+function generateNum() {
   let num = random();
   return commonWords[num];
 }
 
+let word;
+let lettersGuessed = [];
+let dashedLane;
+
 function generateGame() {
-  let word = generateWord();
+  word = generateNum();
+  console.log(word);
   displayDashes(word.length);
 }
 
-
 function displayDashes(length) {
-  let dashedLine;
+  let dashedLine = "";
   for (var i=0; i < length; i++) {
     dashedLine += "_";
   }
   document.getElementById("msg").innerHTML = dashedLine;
-  document.getElementById("letter-box").innerHTML = " ";
+  // return;
+  // document.getElementById("letter-box").innerHTML = " ";
 }
 
-const inputs = ["_","_","_"]
+// const inputs = ["_","_","_"]
 
 
 function guess() {
-  var letter = prompt("Guess a letter").toLowerCase();
-  guessedArr(letter);
-  compare(letter);
+  var letterInput = prompt("Guess a letter").toLowerCase();
+  guessedArr(letterInput);
+  compare(letterInput);
 }
 /*=================================================
                     Game Play
 =================================================*/
-var lettersGuessed = [];
+
 
 function guessedArr(letter) {
   lettersGuessed.push(letter);
@@ -49,15 +54,16 @@ function guessedArr(letter) {
 
 function compare(letter) {
 	  for (var i = 0; i < word.length; i++) {
-	    word = word.split(" ");
-	    if (word[i] === letter) {
-	      line = line.split(" ");
-	      var extractedLetter = word[i];
-	      line[i] = extractedLetter;
-        document.getElementById("msg").innerHTML = line;
+	    let wordArray = word.split(" ");
+	    if (wordArray[i] === letter) {
+	      dashedLineArray = dashedLine.split(" ");
+	      var extractedLetter = wordArray[i];
+	      dashedLine[i] = letter;
+        document.getElementById("msg").innerHTML = dashedLine;
 	  }
   }
 }
+
 
 
 /*
