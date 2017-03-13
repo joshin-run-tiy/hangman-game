@@ -2,25 +2,39 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hangman Game</title>
+    <title>Hangman 11</title>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/reset.css">
-
   </head>
   <body>
-    <div class="outer flex-container">
+    <header id="header" class="flex-container">
+      <h1>Hangman 11</h1>
+
+    </header>
+    <div id="msg-box-position" class="outer flex-container">
       <div class="inner flex-container">
-        <!-- <p class="message-box flex-container" id="message">Change Me</p> -->
-        <p id="msg" class="message-box flex-container">Message</p>
+        <p id="msg" class="message-box flex-container">Word</p>
       </div>
-      <button id="button" onclick="chooseWord()" class="play-button flex-container">Choose Word</button>
-      <!-- <button onclick="guess()" class="play-button flex-container">Guess</button> -->
+
+      <div id="button-box" class="flex-container">
+        <button id="button" onclick="chooseWord()" class="play-button flex-container">Generate Word</button>
+      <button id="button-two" onclick="guess()" class="play-button flex-container">Guess</button>
+      </div>
     </div>
-    <div class="flex-container">
-      <p id="letters-guessed-box" class="letters-guessed flex-container">Guessed</p>
+    <div class="flex-container letters-guessed">
+      <div class="box-title">
+        <p>Letters Used</p>
+      </div>
+      <div class="guessed-letters-list">
+        <p id="letter-box"></p>
     </div>
+    <!-- <div id="button-box" class="flex-container">
+      <button id="button" onclick="chooseWord()" class="play-button flex-container">Generate Word</button>
+    <button id="button-two" onclick="guess()" class="play-button flex-container">Guess</button>
+  </div> -->
     <script src="./js/common-words.js"></script>
+    <!-- <script src="./js/main-02.js"></script> -->
     <script src="./js/main.js"></script>
   </body>
 </html>

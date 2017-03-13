@@ -9,138 +9,112 @@ function chooseWord() {
   var line = "";
   var index = random();
   var word = commonWords[index];
-            // var guessButton = <button id="button" onclick="chooseWord()" class="play-button flex-container">Play Game</button>;
   for (var i=0; i < word.length; i++) {
     line += " _ ";
   }
   document.getElementById("msg").innerHTML = line;
-  document.getElementById('button').innerHTML = '<button id="button" onclick="guess()" class="play-button flex-container">Guess</button>';
+  document.getElementById("letter-box").innerHTML = " ";
+  /*would like to clear var below each time the 'generate word' button is clicked*/
+  //var lettersGuessed = [];
+}
+
+function guess() {
+  var letter = prompt("Guess a letter").toLowerCase();
+  guessedArr(letter);
+  compare(letter);
 }
 /*=================================================
                     Game Play
 =================================================*/
-function guess() {
-  var letter = prompt("Guess a letter").toLowerCase();
-  guessedArr();
-}
-function guessedArr() {
-  var lettersGuessed = [];
+var lettersGuessed = [];
+
+function guessedArr(letter) {
   lettersGuessed.push(letter);
-  document.getElementById("letters-guessed-box").innerHTML = lettersGuessed;
+  document.getElementById("letter-box").innerHTML = lettersGuessed.join("・");
 }
-/*//
-// function guessedArr() {
-//   var lettersGuessed = [];
-//   for(var i = 0; i < 11; i++) {
-//    lettersGuessed.push(letter);
-//    console.log(lettersGuessed);
-//  }
-//  }
--------------------*/ // document.getElementById("letters-guessed-box").innerHTML = lettersGuessed;
-// }// function guess() {
-//   var letter = prompt("Guess a letter").toLowerCase();
-//   letter = lettersGuessed();
-//   return letter;
+/*====Cannot clear the lettersGuessed variable after choosing another word====*/
+
+/*=================================================
+                    EVERYTHING ABOVE WORKS
+=================================================*/
+
+//function compare(letter)
+//  for (var i = 0; i < word.length; i++) {
+//     if (word[i] === letter) {
+
+
+function compare(letter) {
+  for (var i = 0; i < word.length; i++) {
+    if (word[i] === letter) {
+      var line = line.splice("");
+      line[i] = word[i];
+          document.getElementById("msg").innerHTML = line;
+        } else {
+          alert("No luck!");
+          // guess();
+        }
+      }
+}
+
+/*
+function compare(letter) {
+    for (var i = 0; i < word.length; i++) {
+        if (word[i] === letter) {
+          var line = (line[i] = " " + letter + " ");
+          document.getElementById("msg").innerHTML = line;
+        } else {
+          alert("No luck!");
+          guess();
+        }
+      }
+*/
+
+
+
+//
+//     document.getElementById("letter-box").innerHTML = splicedIndex;
 // }
 //
-// var commonWords = [
-// "the","boat","and","milk","any","pig","some","you","that","itch","cord",
-// "was","for","only","are","ask","with","his","they","ice","bell","pink",
-// "this","have","from","fork","one","had","bye","word","but","not",
-// "what","all","were","went","when","your","can","said","there",
-// "use","ant","each","which","she","dull","how","their","iffy","will",
-// "pup","other","about","out","many","then","them","these","soul",
-// "some","her","would","make","like","him","into","time","taste",
-// "look","two","more","write","goat","seen","number","snow","way",
-// "could","drops","smile","than","first","water","been","call",
-// "who","oil","sits","cow","find","long","down","day","did","get",
-// "come","made","may","part"
-// ];
-//
-// function random() {
-//   return Math.floor(Math.random() * 100);
-// }
-//
-// function guessedArr() {
-//   var lettersGuessed = [];
-//   for(var i = 0; i < 11; i++) {
-//    lettersGuessed.push(letter);
-//    console.log(lettersGuessed);
-//  }
-//  console.log("game over");
-//  }
-// //end run
-//
-// //return lettersGuessed.push(letter);
-//
-//
-// function guess() {
-//
-//   var letter = prompt("Guess a letter").toLowerCase;
-//   //.toLowerCase();
-//   guessedArr();
-// }
-//
-//
-//
-// var line = "";
-//
-// function chooseWord() {
-//   var index = random();
-//   var word = commonWords[index];
-//             // var guessButton = <button id="button" onclick="chooseWord()" class="play-button flex-container">Play Game</button>;
-//   for (var i=0; i < word.length; i++) {
-//     line += " _ ";
+// function compare(letter) {
+//   for (var i = 0; i < word.length; i++) {
+//     if (letter === word[i]) {
+//       line = line.split();
+//     }
 //   }
-//   // document.getElementById("msg").innerHTML = line;
-//   console.log(line);
-//   guess();
-//   // line = "";
-//   // document.getElementById('button').innerHTML = '<button id="button" onclick="guess()" class="play-button flex-container">Guess</button>';
+// }
+//
+// function guessedArr(letter) {
+//   var lettersGuessed = [];
+//   lettersGuessed.push(letter[i]);
+//   document.getElementById("letter-box").innerHTML = lettersGuessed;
 // }
 //
 //
-//
-//
-//
-//
-// // function guess() {
-// //   var arr = [];
-// //   var letter = prompt("Guess a letter").toLowerCase();
-// //   var array = arr.push(letter);
-// //   document.getElementById("letters-guessed-box").innerHTML = array;
-// //
-//
-// //   var arr = [];
-// // for(var i = 0; i < 10; i++)
-// //    arr.push(prompt("Enter a number"); document.getElementById("letters-guessed-box").innerHTML = letter;
-// // }
-//
-//
-// //
-// // function lettersGuessed() {
-// //  var lettersGuessedArr = [];
-// //  lettersGuessedArr = lettersGuessedArr.push(letter);
-// //  document.getElementById("letters-guessed-box").innerHTML = lettersGuessedArr;
-// // }
-// // function answerCalc() {
-// //   var answer = "";
-// //   var wordArr = secretWord();
-// //     for (var i = 0; i < word.length; i++) {
-// //       answer = wordArr[i].push(line);
-// //       //" _ " " _ " " _ "
-// //       //" _ " " a " " _
-// //  }
-// /*-------------------
-// // function secretWord() {
-// //   word = word.split();
-// //   return word;
-// // }
-// -------------*/
-// // //
-// // variables: letter (ex. "a"), wordArr (ex. ["c","a","t"])
-// //     var answer = letter.push(wordArr[i]);
-// //     //push letter var (or replace) into the index place where it belongs then reprints out the updated "line" var.
-// //     document.getElementById("msg").innerHTML = answer;
-// //   }
-// // }*/
+//           var splicedIndex = alphabet.splice(i, 1);
+//           document.getElementById("letter-box").innerHTML = splicedIndex;
+//           return splicedIndex;
+//           // alphabet updated without letter
+//         } else {
+//           console.log("Invalid.");
+//           var letter = prompt("Guess again!");
+//         }
+//     }
+// }
+/*+++++working above+++++++++++++++++++++++++*/
+
+
+// function replace(letter);
+
+// function validate(letter) {
+//     for (var i = 0; i < alphabet.length; i++) {
+//         if (alphabet[i] == letter) {
+//           var splicedIndex = alphabet.splice(i, 1);
+//           document.getElementById("letter-box").innerHTML = splicedIndex;
+//           return splicedIndex;
+//           // alphabet updated without letter
+//         } else {
+//           console.log("Invalid.");
+//           var letter = prompt("Guess again!");
+//         }
+//     }
+// }
