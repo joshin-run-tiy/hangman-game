@@ -45,8 +45,9 @@ function guessedArr(letter) {
 
 function compare(letter) {
   for (var i = 0; i < word.length; i++) {
+    word = word.splice("");
     if (word[i] === letter) {
-      var line = line.splice("");
+      line = line.splice("");
       line[i] = word[i];
           document.getElementById("msg").innerHTML = line;
         } else {
