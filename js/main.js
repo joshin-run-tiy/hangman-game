@@ -1,22 +1,29 @@
-/*--------------------
-WORD AND UNDERSCORES SET
----------------------*/
 function random() {
   return Math.floor(Math.random() * 100);
 }
 
-function chooseWord() {
-  var line = "";
-  var index = random();
-  var word = commonWords[index];
-  for (var i=0; i < word.length; i++) {
-    line += " _ ";
-  }
-  document.getElementById("msg").innerHTML = line;
-  document.getElementById("letter-box").innerHTML = " ";
-  /*would like to clear var below each time the 'generate word' button is clicked*/
-  //var lettersGuessed = [];
+function generateWord() {
+  let num = random();
+  return commonWords[num];
 }
+
+function generateGame() {
+  let word = generateWord();
+  displayDashes(word.length);
+}
+
+
+function displayDashes(length) {
+  let dashedLine;
+  for (var i=0; i < length; i++) {
+    dashedLine += "_";
+  }
+  document.getElementById("msg").innerHTML = dashedLine;
+  document.getElementById("letter-box").innerHTML = " ";
+}
+
+const inputs = ["_","_","_"]
+
 
 function guess() {
   var letter = prompt("Guess a letter").toLowerCase();
@@ -38,24 +45,20 @@ function guessedArr(letter) {
                     EVERYTHING ABOVE WORKS
 =================================================*/
 
-//function compare(letter)
-//  for (var i = 0; i < word.length; i++) {
-//     if (word[i] === letter) {
 
 
 function compare(letter) {
-  for (var i = 0; i < word.length; i++) {
-    word = word.splice("");
-    if (word[i] === letter) {
-      line = line.splice("");
-      line[i] = word[i];
-          document.getElementById("msg").innerHTML = line;
-        } else {
-          alert("No luck!");
-          // guess();
-        }
-      }
+	  for (var i = 0; i < word.length; i++) {
+	    word = word.split(" ");
+	    if (word[i] === letter) {
+	      line = line.split(" ");
+	      var extractedLetter = word[i];
+	      line[i] = extractedLetter;
+        document.getElementById("msg").innerHTML = line;
+	  }
+  }
 }
+
 
 /*
 function compare(letter) {
