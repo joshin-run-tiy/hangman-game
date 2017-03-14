@@ -1,6 +1,6 @@
 let word;
 let lettersGuessed = [];
-let dashedLine = "";
+let dashedLine = [];
 
 function generateGame() {
   word = generateNum();
@@ -14,11 +14,10 @@ function random() {
 
 function generateNum() {
   let num = random();
-  return commonWords[num];
+  return commonWords[num].split("");
 }
 
 function displayDashes(length) {
-  let dashedLine = [];
   for (var i=0; i < length; i++) {
     dashedLine += "_";
   }
@@ -36,17 +35,7 @@ function guessedArr(letter) {
   document.getElementById("letter-box").innerHTML = lettersGuessed.join("・");
 }
 
-/*CODE BELOW IS BROKEN BUT ALMOST THERE. CHECK THE CODE BETWEEN LINES FOR CLUES TO FIX
-
-++++++++++++++++++++=
-let word = ["a","t"];
-let dashedLine = ["_","_","_","_","_"];
-// letterString = word[1].toString("");
-dashedLine[1] = word[1];
-dashedLine[0] = word[0]
-console.log(dashedLine);
-
-
+/*still no luck (below)*/
 /*
 POSSIBLE CLUES:
 let word = "would";
@@ -59,19 +48,17 @@ console.log(dashedLine);
 // dashedLine.charAt(2) = word.charAt(2);
 */
 
-
-+++++++++++++++++++++
-
 function compare(letter) {
     console.log("Guessed: " + letter);
+    let dashedLineArray;
     for (var i = 0; i < word.length; i++) {
-	    if (word.charAt(i) === letter) {
-	      dashedLine.charAt(i) = word.charAt(i);
-        console.log(dashedLine);
-        return;
+	    if (word[i] === letter) {
+        console.log(word[i].toUpperCase());
+        console.log(dashedLineArray[i]);
 	      // dashedLineArray[i] = wordArray[i];
         // console.log(dashedLineArray.join());
         // return;
+
     }
   }
 }
