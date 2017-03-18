@@ -2,7 +2,7 @@ let word;
 let lettersGuessed = [];
 let dashedLine = "";
 
-function generateGame() {
+function newGame() {
   word = generateNum();
   console.log(word);
   displayDashes(word.length);
@@ -59,22 +59,22 @@ console.log(dashedLine);
 // dashedLine.charAt(2) = word.charAt(2);
 */
 
-
-+++++++++++++++++++++
-
-function compare(letter) {
-    console.log("Guessed: " + letter);
-    for (var i = 0; i < word.length; i++) {
-	    if (word.charAt(i) === letter) {
-	      dashedLine.charAt(i) = word.charAt(i);
-        console.log(dashedLine);
-        return;
-	      // dashedLineArray[i] = wordArray[i];
-        // console.log(dashedLineArray.join());
-        // return;
-    }
-  }
-}
+//
+// +++++++++++++++++++++
+//
+// function compare(letter) {
+//     console.log("Guessed: " + letter);
+//     for (var i = 0; i < word.length; i++) {
+// 	    if (word.charAt(i) === letter) {
+// 	      dashedLine.charAt(i) = word.charAt(i);
+//         console.log(dashedLine);
+//         return;
+// 	      // dashedLineArray[i] = wordArray[i];
+//         // console.log(dashedLineArray.join());
+//         // return;
+//     }
+//   }
+// }
 
 
 // function compare(letter) {

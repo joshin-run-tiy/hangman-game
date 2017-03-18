@@ -1,4 +1,29 @@
-# __Notes__
+# __Hangman 11__
+
+-Demonstrate correct use of functions, conditionals, loops, arrays
+-Properly sequence JavaScript statements
+-Change the DOM based on application state (win/loss, valid/invalid guess)
+
+****
+
+### _**Testing:**_
+
+###### Functions
+- [ ] - Random Number Generate
+- [ ] - Generate Word (new game)
+- [ ] - Refreshes page/clears word/guesses
+- [ ] - Activate Game Play
+- [ ] - Display Dashes
+- [ ] - Receive Guess - Stash Letter
+- [ ] - Replace dash in word with letter
+- [ ] - Print letter guessed, add to
+- [ ] - Only accept one char guess
+- [ ] - verify if alphabet char
+- [ ] - remaining turns
+- [ ] - if win/lose produce indication
+- [ ] - lose inication when run out of turns
+
+*****
 
 ### __Resources__
 - _LINK:_ [Git Commit Msg Website](https://karma-runner.github.io/1.0/dev/git-commit-msg.html)
