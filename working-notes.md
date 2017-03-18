@@ -9,11 +9,11 @@
 ### _**Testing:**_
 
 ###### Functions
-- [ ] - Random Number Generate
-- [ ] - Generate Word (new game)
+- [x] - Random Number Generate
+- [x] - Generate Word (new game)
 - [ ] - Refreshes page/clears word/guesses
-- [ ] - Activate Game Play
-- [ ] - Display Dashes
+- [x] - Activate Game Play
+- [x] - Display Dashes
 - [ ] - Receive Guess - Stash Letter
 - [ ] - Replace dash in word with letter
 - [ ] - Print letter guessed, add to
@@ -21,7 +21,7 @@
 - [ ] - verify if alphabet char
 - [ ] - remaining turns
 - [ ] - if win/lose produce indication
-- [ ] - lose inication when run out of turns
+- [ ] - lose indication when run out of turns
 
 *****
 

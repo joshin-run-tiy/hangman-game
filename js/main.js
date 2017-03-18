@@ -25,16 +25,7 @@ function displayDashes(length) {
   document.getElementById("msg").innerHTML = dashedLine;
 }
 
-function guessLetter() {
-  var letterInput = prompt("Guess a letter").toLowerCase();
-  guessedArr(letterInput);
-  compare(letterInput);
-}
 
-function guessedArr(letter) {
-  lettersGuessed.push(letter);
-  document.getElementById("letter-box").innerHTML = lettersGuessed.join("・");
-}
 
 /*CODE BELOW IS BROKEN BUT ALMOST THERE. CHECK THE CODE BETWEEN LINES FOR CLUES TO FIX
 
