@@ -75,31 +75,33 @@ GET LETTER - WORKING
 =========================================*/
 const guess = (function() {
 
-  function guess() {
-    var input = prompt("Guess a letter").toLowerCase();
+  function guessChar() {
+    const input = prompt("Guess a letter").toLowerCase();
     checkForNoneOrDouble(input);
   }
 /*=========================================
 PUSH LETTER TO 'GUESSED LETTERS' LIST - WORKING
 =========================================*/
   function guessedArr(letter) {
+    const lettersGuessed = [];
     lettersGuessed.push(letter);
     document.getElementById("letter-box").innerHTML = lettersGuessed.join("・");
   }
 
   function checkForNoneOrDouble(input) {
     if (input === "") {
-      alert("Please enter a letter.");
-      guess();
-    } else if (input.length > 1) {
-      alert("Guess only one letter.");
-      guess();
+      console.log("Please enter a letter.");
+      guessChar();
+      const inputLength = input.length;
+    } else if (input > 1) {
+      console.log("Guess only one letter.");
+      guessChar();
     }
-    validate(input)
+    validate(input);
   }
-//==============================
+// //==============================
   function validate(input) {
-    let alphabet =    ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    const alphabet =    ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
     alphaArr = alphabet.length;
     for (var i = 0; i < alphaArr; i++) {
       if (alphabet[i] === input) {
@@ -114,6 +116,13 @@ COMPARE: Find if a lowercase letter of 26
     alert("it's a lowercase letter");
   }
 
+  return {
+    guessChar: guessChar,
+    guessedArr: guessedArr,
+    checkForNoneOrDouble: checkForNoneOrDouble,
+    validate: validate,
+    compare: compare,
+  }
 })();
 
 module.exports = guess;
@@ -130,6 +139,25 @@ module.exports = guess;
 // }
 // }
 
+/*=========================================
+VALIDATE CHARACTER (double, not letter, symbol, no guess.)
+=========================================*/
+// function validateInput(input) {
+//   if (input.length > 1) {
+//     alert("Guess only one letter.");
+//     guess();
+//   } else if (input === "" || " ") {
+//     alert("Unrecognized character. Please enter a letter.");
+//     guess();
+//   } else if (typeof input === 'number') {
+//     alert("Unrecognized character. Please enter a letter.");
+//   } else {
+//     alert("compare");
+//     // compare(input);
+//   }
+// }
+//==========================
+
 
 /***/ }),
 /* 1 */
@@ -138,7 +166,6 @@ module.exports = guess;
 const main = (function() {
 
   let word;
-  let lettersGuessed = [];
   let dashedLine = "";
   var commonWords = [
   "the","boat","and","milk","any","pig","some","you","that","itch","cord",
@@ -195,10 +222,20 @@ DISPLAYS DASHES THE LENGTH OF THE WORD
     generateNum: generateNum,
     displayDashes: displayDashes,
   }
-
 })();
 
 module.exports = main;
+
+
+
+/*=========================================
+RELOAD ON "NEW GAME" BUTTON EXECUTION - BROKEN
+=========================================*/
+// function newGame() {
+//   // function onLoad() {
+//   window.onload = onLoad;
+//   console.log('script loaded');
+// }
 
 
 /***/ }),
@@ -213,7 +250,7 @@ main.random();
 main.generateNum();
 main.displayDashes();
 
-guess.guess();
+guess.guessChar();
 guess.guessedArr();
 guess.checkForNoneOrDouble();
 guess.validate();
@@ -222,3 +259,4 @@ guess.compare();
 
 /***/ })
 /******/ ]);
+//# sourceMappingURL=bundle.js.map

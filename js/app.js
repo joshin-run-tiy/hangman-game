@@ -6,7 +6,7 @@ main.random();
 main.generateNum();
 main.displayDashes();
 
-guess.guess();
+guess.guessChar();
 guess.guessedArr();
 guess.checkForNoneOrDouble();
 guess.validate();
