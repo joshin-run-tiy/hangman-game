@@ -5,7 +5,8 @@ const guess = (function() {
 
   function guessChar() {
     const input = prompt("Guess a letter").toLowerCase();
-    checkForNoneOrDouble(input);
+    return input;
+    // checkForNoneOrDouble(input);
   }
 /*=========================================
 PUSH LETTER TO 'GUESSED LETTERS' LIST - WORKING

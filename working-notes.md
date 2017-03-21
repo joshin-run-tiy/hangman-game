@@ -16,12 +16,12 @@
 - [x] - Display Dashes
 - [ ] - Receive Guess - Stash Letter
 - [ ] - Replace dash in word with letter
-- [ ] - Print letter guessed, add to
+- [x] - Print letter guessed, add to
 - [ ] - Only accept one char guess
 - [ ] - verify if alphabet char
 - [ ] - remaining turns
 - [ ] - if win/lose produce indication
-- [ ] - lose indication when run out of turns
+- [ ] - lose inication when run out of turns
 
 *****
 
