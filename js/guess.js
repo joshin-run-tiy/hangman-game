@@ -1,13 +1,26 @@
+const letter = "p";
+const word = "apple";
+const result = "___l_";
+
+let i = 0;
+do {
+  i = word.indexOf(letter);
+  /*update result*/
+  i = -1;
+} while (i != -1);
+
+
+
 /*=========================================
 GET LETTER - WORKING
 =========================================*/
-const guess = (function() {
-
-  function guessChar() {
-    const input = prompt("Guess a letter").toLowerCase();
-    return input;
-    // checkForNoneOrDouble(input);
-  }
+// const guess = (function() {
+//
+//   function guessChar() {
+//     const input = prompt("Guess a letter").toLowerCase();
+//     return input;
+//     // checkForNoneOrDouble(input);
+//   }
 /*=========================================
 PUSH LETTER TO 'GUESSED LETTERS' LIST - WORKING
 =========================================*/
@@ -41,12 +54,38 @@ PUSH LETTER TO 'GUESSED LETTERS' LIST - WORKING
 /*=========================================
 COMPARE: Find if a lowercase letter of 26
 =========================================*/
-  function compare(input) {
-    alert("it's a lowercase letter");
+  // function compare(input) {
+  //   alert("it's a lowercase letter");
+  // }
+
+  /*=========================================
+  DEX CODE: Find if a lowercase letter of 26
+  =========================================*/
+  function loopLetterThruWord(input, word, ) {
+    for (let i = 0; i < letter.length; i++) {
+
+    }
   }
+///////
+var letter = "a";
+var word = "random";
+var result = "____o_"
+function (letter, word, result) {}
+///////
+/*---------------
+
+var num = 3;
+while(num) {
+  console.log(num);
+  num--
+}
+
+---------------*/
+//////
+
 
   return {
-    guessChar: guessChar,
+    // guessChar: guessChar,
     guessedArr: guessedArr,
     checkForNoneOrDouble: checkForNoneOrDouble,
     validate: validate,
@@ -55,6 +94,8 @@ COMPARE: Find if a lowercase letter of 26
 })();
 
 module.exports = guess;
+
+
 
 
 // function validateInAlphabet(input) {

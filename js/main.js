@@ -61,8 +61,6 @@ DISPLAYS DASHES THE LENGTH OF THE WORD
 
 module.exports = main;
 
-
-
 /*=========================================
 RELOAD ON "NEW GAME" BUTTON EXECUTION - BROKEN
 =========================================*/
