@@ -12,29 +12,73 @@
       <h1>Hangman 11</h1>
     </header>
 
+
+
     <div id="msg-box-position" class="outer flex-container">
+
       <div class="inner flex-container">
+
         <p id="msg" class="message-box flex-container">Word</p>
+
       </div>
 
+
+
       <div id="button-box" class="flex-container">
-        <button id="button" onclick="newGame()" class="play-button flex-container">New Game</button>
-      <button id="button-two" onclick="guessChar()" class="play-button flex-container">Guess</button>
+        <button id="new-game" class="play-button flex-container">New Game</button>
+
+        <!-- new input from simple -->
+                <input type="text" maxlength="1" minlength="1" name="letter-box" id="letter-box" placeholder="letter-box" />
+
+                <input id="guess-button" name="guess" type="submit" value="Guess" />
+        <!-- end simple example -->
+      <button id="guess-char" class="play-button flex-container">Guess</button>
+
+<!-- new input from simple -->
+        <!-- <input type="text" maxlength="1" minlength="1" name="letter-box" id="letter-box" placeholder="Guess a letter" />
+
+        <input id="guess-button" name="guess" type="submit" value="Guess" /> -->
+<!-- end simple example -->
+
       </div>
     </div>
     <div class="flex-container letters-guessed">
-      <div class="box-title">
+
+
+
+      <!-- <div class="box-title"> -->
+      <div>
         <p>Letters Used</p>
       </div>
+
       <div class="guessed-letters-list">
         <p id="letter-box"></p>
       </div>
+
+      <div>
+        <p>Turns Remaining</p>
+      </div>
+
+      <div class="guessed-letters-list">
+        <p id="turns"></p>
+      </div>
+
+      <div>
+        <p>Blank Output</p>
+      </div>
+
+      <div class="guessed-letters-list">
+        <p id="blank-output"></p>
+      </div>
     </div>
-    <!-- <div id="button-box" class="flex-container">
-      <button id="button" onclick="chooseWord()" class="play-button flex-container">Generate Word</button>
-    <button id="button-two" onclick="guess()" class="play-button flex-container">Guess</button>
-  </div> -->
+
+
 
   <script type="text/javascript" src="./script-11.js"></script>
   </body>
 </html>
+
+<!-- <div id="button-box" class="flex-container">
+<button id="button" onclick="chooseWord()" class="play-button flex-container">Generate Word</button>
+<button id="button-two" onclick="guess()" class="play-button flex-container">Guess</button>
+</div> -->

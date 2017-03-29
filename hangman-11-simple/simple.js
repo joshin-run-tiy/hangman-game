@@ -1,7 +1,8 @@
+// review start
 (function () {
     "use strict";
     var availableLetters, words, guessInput, guess, guessButton, lettersGuessed, lettersMatched, output, man, letters, lives, currentWord, numLettersMatched, messages;
-
+//why declare all vars in global then use in func scopes?
     function setup() {
         /* start config options */
         availableLetters = "abcdefghijklmnopqrstuvwxyz";
@@ -22,31 +23,36 @@
         currentWord = words[Math.floor(Math.random() * words.length)];
         console.log(currentWord);
         /* make #man and #output blank, create vars for later access */
+//reviewed above
         output = document.getElementById("output");
-        man = document.getElementById("man");
+        man = document.getElementById("man"); //implimented as 'turns'
         guessInput = document.getElementById("letter");
 
         man.innerHTML = 'You have ' + lives + ' lives remaining';
         output.innerHTML = '';
 
         document.getElementById("letter").value = '';
-
+//reviewed above
         /* make sure guess button is enabled */
         guessButton = document.getElementById("guess");
         guessInput.style.display = 'inline';
         guessButton.style.display = 'inline';
-
+//reviewed above
         /* set up display of letters in current word */
-        letters = document.getElementById("letters");
-        letters.innerHTML = '<li class="current-word">Current word:</li>';
-
+//?        letters = document.getElementById("letters");
+//?        letters.innerHTML = '<li class="current-word">Current word:</li>';
+/*=========
+not going to use as of now
+=========*/
         var letter, i;
         for (i = 0; i < currentWord.length; i++) {
             letter = '<li class="letter letter' + currentWord.charAt(i).toUpperCase() + '">' + currentWord.charAt(i).toUpperCase() + '</li>';
             letters.insertAdjacentHTML('beforeend', letter);
         }
     }
-
+/*=========
+GAME OVER/WIN
+=========*/
     function gameOver(win) {
         if (win) {
             output.innerHTML = messages.win;
@@ -59,6 +65,10 @@
         guessInput.style.display = guessButton.style.display = 'none';
         guessInput.value = '';
     }
+/*=========
+
+=========*/
+
 
     /* Start game - should ideally check for existing functions attached to window.onload */
     window.onload = setup();
