@@ -1,6 +1,8 @@
 * {
     box-sizing: border-box;
+    border: 1px dashed blue;
 }
+
 body {
     font-family: sans-serif;
 }

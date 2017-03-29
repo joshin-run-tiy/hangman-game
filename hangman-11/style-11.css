@@ -1,0 +1,145 @@
+body {
+  background-color: #000;
+  font-family: sans-serif;
+}
+
+#header {
+  width: 100%;
+  height: 20%;
+  background-color: #000;
+  border: 1px dashed #fff;
+  color: #fff;
+  font-size: 5em;
+  text-align: center;
+  font-size: 6em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 0.30em;
+  padding-bottom: 0.30em;
+  font-family: impact;
+  margin-bottom: 20px;
+}
+
+#msg-box-position {
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #fff;
+  font-size: 10em;
+}
+
+.box-title {
+  color: #fff;
+  width: 100%;
+  height: 20%;
+  font-size: 0.666em;
+  margin: 0px auto;
+  box-sizing: border-box;
+  border: 1px dashed #fff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-button {
+  background-color: #fff;
+  color: #000;
+  margin: 3px;
+  padding: 10px;
+  border: 1px dashed #fff;
+  font-size: 1em;
+  font-family: sans-serif;
+  border-radius: 5px;
+  margin: 20px;
+  /*box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  align-self: auto;
+  flex-direction: column;
+  flex-wrap: wrap;*/
+}
+
+/*#button {
+
+}
+
+#button-two {
+
+}*/
+
+#button-box {
+  width: 350px;
+  height: 105px;
+  background-color: #000;
+  margin: auto;
+  border: 1px dashed #fff;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    float: left;
+}
+
+.message-box {
+  font-size: 4em;
+  color: #fff;
+  font-family: sans-serif;
+  letter-spacing: 1rem;
+}
+
+.letters-guessed {
+  font-size: 3em;
+  color: #fff;
+  border-color: #000;
+  padding: 10px;
+  height: 300px;
+  width: 410px;
+  border: 1px dashed #fff;
+  font-family: sans-serif;
+  margin-left: 20px;
+}
+
+.guessed-letters-list {
+  border: 1px dashed #fff;
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5em;
+}
+
+.outer {
+width: 75%;
+height: 800px;
+background-color: #000;
+display: flex;
+border: 1px dashed #fff;
+}
+
+.inner {
+width: 400px;
+height: 400px;
+background-color: #000;
+margin: auto;
+border: 1px dashed #fff;
+}
+
+/*#flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-self: center;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 300px;
+    width: 400px;
+}*/
