@@ -1,4 +1,4 @@
-const main = (function() {
+// const main = (function() {
 
   let word;
   let dashedLine = "";
@@ -51,15 +51,15 @@ DISPLAYS DASHES THE LENGTH OF THE WORD
     document.getElementById("msg").innerHTML = dashedLine;
   }
 
-  return {
-    newGame: newGame,
-    random: random,
-    generateNum: generateNum,
-    displayDashes: displayDashes,
-  }
-})();
+  // return {
+  //   newGame: newGame,
+  //   random: random,
+  //   generateNum: generateNum,
+  //   displayDashes: displayDashes,
+  // }
+// })();
 
-module.exports = main;
+// module.exports = main;
 
 /*=========================================
 RELOAD ON "NEW GAME" BUTTON EXECUTION - BROKEN

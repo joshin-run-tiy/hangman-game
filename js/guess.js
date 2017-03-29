@@ -1,3 +1,4 @@
+/* NOTES ON ANOTHER WAY TO DO THE REPLACEMENT OF LETTERS *//*
 const letter = "p";
 const word = "apple";
 const result = "___l_";
@@ -5,52 +6,54 @@ const result = "___l_";
 let i = 0;
 do {
   i = word.indexOf(letter);
-  /*update result*/
+  /*update result*//*
   i = -1;
 } while (i != -1);
-
-
+================================================ */
+let lettersGuessed = [];
 
 /*=========================================
 GET LETTER - WORKING
 =========================================*/
 // const guess = (function() {
 //
-//   function guessChar() {
-//     const input = prompt("Guess a letter").toLowerCase();
-//     return input;
-//     // checkForNoneOrDouble(input);
-//   }
+  function guessChar() {
+    const input = prompt("Guess a letter").toLowerCase();
+    guessedArr(input);
+    return input;
+    // checkForNoneOrDouble(input);
+  }
 /*=========================================
 PUSH LETTER TO 'GUESSED LETTERS' LIST - WORKING
 =========================================*/
+
   function guessedArr(letter) {
-    const lettersGuessed = [];
     lettersGuessed.push(letter);
     document.getElementById("letter-box").innerHTML = lettersGuessed.join("・");
+    console.log(lettersGuessed.join("・"))
   }
 
-  function checkForNoneOrDouble(input) {
-    if (input === "") {
-      console.log("Please enter a letter.");
-      guessChar();
-      const inputLength = input.length;
-    } else if (input > 1) {
-      console.log("Guess only one letter.");
-      guessChar();
-    }
-    validate(input);
-  }
-// //==============================
-  function validate(input) {
-    const alphabet =    ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-    alphaArr = alphabet.length;
-    for (var i = 0; i < alphaArr; i++) {
-      if (alphabet[i] === input) {
-        compare(input);
-      }
-    }
-  }
+  // function checkForNoneOrDouble(input) {
+  //   if (input === "") {
+  //     console.log("Please enter a letter.");
+  //     guessChar();
+  //     const inputLength = input.length;
+  //   } else if (input > 1) {
+  //     console.log("Guess only one letter.");
+  //     guessChar();
+  //   }
+  //   validate(input);
+  // }
+// // //==============================
+//   function validate(input) {
+//     const alphabet =    ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+//     alphaArr = alphabet.length;
+//     for (var i = 0; i < alphaArr; i++) {
+//       if (alphabet[i] === input) {
+//         compare(input);
+//       }
+//     }
+//   }
 /*=========================================
 COMPARE: Find if a lowercase letter of 26
 =========================================*/
@@ -61,16 +64,16 @@ COMPARE: Find if a lowercase letter of 26
   /*=========================================
   DEX CODE: Find if a lowercase letter of 26
   =========================================*/
-  function loopLetterThruWord(input, word, ) {
-    for (let i = 0; i < letter.length; i++) {
-
-    }
-  }
+  // function loopLetterThruWord(input, word, ) {
+  //   for (let i = 0; i < letter.length; i++) {
+  //
+  //   }
+  // }
 ///////
-var letter = "a";
-var word = "random";
-var result = "____o_"
-function (letter, word, result) {}
+// var letter = "a";
+// var word = "random";
+// var result = "____o_"
+// function (letter, word, result) {}
 ///////
 /*---------------
 
@@ -84,16 +87,16 @@ while(num) {
 //////
 
 
-  return {
-    // guessChar: guessChar,
-    guessedArr: guessedArr,
-    checkForNoneOrDouble: checkForNoneOrDouble,
-    validate: validate,
-    compare: compare,
-  }
-})();
+//   return {
+//     // guessChar: guessChar,
+//     guessedArr: guessedArr,
+//     checkForNoneOrDouble: checkForNoneOrDouble,
+//     validate: validate,
+//     compare: compare,
+//   }
+// })();
 
-module.exports = guess;
+// module.exports = guess;
 
 
 
