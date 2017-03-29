@@ -14,14 +14,14 @@
 - [ ] - Refreshes page/clears word/guesses
 - [x] - Activate Game Play
 - [x] - Display Dashes
-- [ ] - Receive Guess - Stash Letter
+- [x] - Receive Guess - Stash Letter
 - [ ] - Replace dash in word with letter
 - [x] - Print letter guessed, add to
 - [ ] - Only accept one char guess
 - [ ] - verify if alphabet char
 - [ ] - remaining turns
-- [ ] - if win/lose produce indication
-- [ ] - lose inication when run out of turns
+- [ ] - if win/lose, produce indication
+- [ ] - 'you lost' indication when run out of turns
 
 *****
 
