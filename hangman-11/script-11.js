@@ -1,87 +1,147 @@
-;(function () {
+;(function onLoad() {
   // "use strict";
+
   let word;
   let dashedLine = [];
+  /* start config options */
+  let availableLetters = "abcdefghijklmnopqrstuvwxyz";
+  let turns = 11;
+  var commonWords = [
+  "the","boat","and","milk","any","pig","some","you","that","itch","cord",
+  "was","for","only","are","ask","with","his","they","ice","bell","pink",
+  "this","have","from","fork","one","had","bye","word","but","not",
+  "what","all","were","went","when","your","can","said","there",
+  "use","ant","each","which","she","dull","how","their","iffy","will",
+  "pup","other","about","out","many","then","them","these","soul",
+  "some","her","would","make","like","him","into","time","taste",
+  "look","two","more","write","goat","seen","number","snow","way",
+  "could","drops","smile","than","first","water","been","call",
+  "who","oil","sits","cow","find","long","down","day","did","get",
+  "come","made","may","part"];
+  let messages = {
+    win: 'Alright! You won the game!',
+    lose: 'Game over. Give it another shot!',
+    guessed: ' already guessed, please try again...',
+    validLetter: 'Please enter a letter from A-Z'
+  };
+  /* end config options */
+  let letterGuessed = letterMatched = '';
+  let numLettersMatched = 0;
+  /* choose a word */
+  let newGame = document.querySelector('button#new-game');
+      newGame.addEventListener('click', function newGame() {
+          word = commonWords[Math.floor(Math.random() * 100)];
+          console.log(word);
+          for (var i=0; i < word.length; i++) {
+            dashedLine += "_";
+            document.getElementById("msg").innerHTML = dashedLine;
+            //return dashedLine; ?????
+          }
+      // });
+          console.log(dashedLine);
+          console.log('will this print "' + dashedLine + '"?');
 
-  // function setup() {
-    /* start config options */
-    let availableLetters = "abcdefghijklmnopqrstuvwxyz";
-    let turns = 11;
-    var commonWords = [
-    "the","boat","and","milk","any","pig","some","you","that","itch","cord",
-    "was","for","only","are","ask","with","his","they","ice","bell","pink",
-    "this","have","from","fork","one","had","bye","word","but","not",
-    "what","all","were","went","when","your","can","said","there",
-    "use","ant","each","which","she","dull","how","their","iffy","will",
-    "pup","other","about","out","many","then","them","these","soul",
-    "some","her","would","make","like","him","into","time","taste",
-    "look","two","more","write","goat","seen","number","snow","way",
-    "could","drops","smile","than","first","water","been","call",
-    "who","oil","sits","cow","find","long","down","day","did","get",
-    "come","made","may","part"];
-    let messages = {
-      win: 'Alright! You won the game!',
-      lose: 'Game over. Give it another shot!',
-      guessed: ' already guessed, please try again...',
-      validLetter: 'Please enter a letter from A-Z'
-    };
-    /* end config options */
+          let guessButton = document.getElementById("guess-button");
+              guessButton.addEventListener('click', function () {
+          let guessInput = document.getElementById("letter-box").value;
+          console.log(guessInput.toLowerCase());
+          // guessedArr(guessInput.toUpperCase());
 
-    let letterGuessed = letterMatched = '';
-    let numLettersMatched = 0;
+              // function guessedArr(letter) {
+                let lettersGuessed = [];
+                let guessUpper = guessInput.toUpperCase();
+                lettersGuessed.push(guessUpper);
+                document.getElementById("guessed-letter-box").innerHTML = lettersGuessed.join(" ");
 
-/*=========================================
-Simple Hangman's Word Chooser Code
-=========================================*/
-    // /* choose a word */
-    // currentWord = words[Math.floor(Math.random() * words.length)];
-    // console.log(currentWord);
-/*=======================================*/
-    /* choose a word */
-    let newGame = document.querySelector('button#new-game');
-    newGame.addEventListener('click', function newGame() {
-      word = commonWords[Math.floor(Math.random() * 100)];
-      console.log(word);
-      displayDashes(word.length);
-    });
 
-    function displayDashes(length) {
+          let input = guessInput.toLowerCase();
+              if (typeof input !== "string" || input.length != 1) {
+                console.log("not a valid entry!");
+                return false;
+              }
+              console.log(guessUpper);
+              console.log(word);
+              console.log(dashedLine);
+              let arr = dashedLine.split("");
+              let i = -1;
+              do {
+                i++;
+                i = word.indexOf(guessUpper, i);
+                arr[i] = guessUpper;
+              } while (i != -1)
+              let joinArr = arr.join("");
+              console.log(joinArr);
+              // return joinArr;
+            // }
+          // return true;
+        })
 
-      for (var i=0; i < length; i++) {
-        dashedLine += "_";
-      }
-      document.getElementById("msg").innerHTML = dashedLine;
-      console.log(dashedLine);
-      return dashedLine;
-    }
 
-    let guessButton = document.getElementById("guess-button");
-    guessButton.addEventListener('click', function () {
-      let guessInput = document.getElementById("letter-box").value;
-      // console.log(guessInput.toLowerCase());
-      guessedArr(guessInput.toUpperCase());
-      verifyInput(guessInput.toLowerCase());
-    });
 
-    let lettersGuessed = [];
-    function guessedArr(letter) {
-      lettersGuessed.push(letter);
-      document.getElementById("guessed-letter-box").innerHTML = lettersGuessed.join(" ");
-    }
+      // console.log(dashedLine);
 
+          });
+//working above
+
+          /* buttons */
+          // document.getElementById("restart").onclick = setup;
+
+          //
+          /*
+          let guessButton = document.getElementById("guess-button");
+              guessButton.addEventListener('click', function () {
+          let guessInput = document.getElementById("letter-box").value;
+          // console.log(guessInput.toLowerCase());
+          guessedArr(guessInput.toUpperCase());
+              let lettersGuessed = [];
+              function guessedArr(letter) {
+                lettersGuessed.push(letter);
+                document.getElementById("guessed-letter-box").innerHTML = lettersGuessed.join(" ");
+              }
+          let input = guessInput.toLowerCase();
+              if (typeof input !== "string" || input.length != 1) {
+                console.log("not a valid entry!");
+                return false;
+              }
+              console.log(letter);
+              console.log(word);
+              console.log(dashedLine);
+              let arr = dashedLine.split("");
+              let i = -1;
+              do {
+                i++;
+                i = word.indexOf(letter, i);
+                arr[i] = letter;
+              } while (i != -1)
+              let joinArr = arr.join("");
+              console.log(joinArr);
+              // return joinArr;
+            // }
+          // return true;
+        })
+
+
+
+      // console.log(dashedLine);
+
+
+
+    // checkLetter('p','pepper','______')
+      // checkLetter('p','apple','___l_')
+}
+}
+*/
+
+
+
+
+    })();
 /*=========================================+++++++++++++++++++++++++++++++++=
 IN CLASS DO/WHILE LOOP REPLACING DASHES WITH LETTERS
 ========================================++++++++++++++++++++++++++++++++++=*/
 
-    function verifyInput(input) {
-      if (typeof input !== "string" || input.length != 1) {
-        console.log("not a valid entry!");
-        return false;
-      }
-      checkLetter(input, word, dashedLine);
 
-      // return true;
-    }
+
 /*=========================================
 GUESSING/SCOPE/OBJECT/EXPERIMENT
 =========================================*/
@@ -112,25 +172,25 @@ GUESSING/SCOPE/OBJECT/EXPERIMENT
 =========================================*/
 
     // }
-    // console.log(dashedLine);
-    function checkLetter (letter, word, dashedLine) {
-      console.log(letter);
-      console.log(word);
-      console.log(dashedLine);
-      let arr = dashedLine.split("");
-      let i = -1;
-      do {
-        // i++;
-        i = word.indexOf(letter, ++i);
-        arr[i] = letter;
-      } while (i != -1)
-      let joinArr = arr.join("");
-      console.log(joinArr);
-      return joinArr;
-    }
-
-    // checkLetter('p','pepper','______')
-    // checkLetter('p','apple','___l_')
+    // // console.log(dashedLine);
+    // function checkLetter (letter, word, dashedLine) {
+    //   console.log(letter);
+    //   console.log(word);
+    //   console.log(dashedLine);
+    //   let arr = dashedLine.split("");
+    //   let i = -1;
+    //   do {
+    //     // i++;
+    //     i = word.indexOf(letter, ++i);
+    //     arr[i] = letter;
+    //   } while (i != -1)
+    //   let joinArr = arr.join("");
+    //   console.log(joinArr);
+    //   return joinArr;
+    // }
+    //
+    // // checkLetter('p','pepper','______')
+    // // checkLetter('p','apple','___l_')
 
 /*=========================================+++++++++++++++++++++++++++++++++=
 ******END******IN CLASS DO/WHILE LOOP REPLACING DASHES WITH LETTERS
@@ -185,7 +245,7 @@ GUESSING/SCOPE/OBJECT/EXPERIMENT
     /* set up dispay of letters in current word */
 
   // }
-})();
+
 /*=========================================
 INITIATES GAME PLAY - PASSES WORD LENGTH REQUEST
 =========================================*/

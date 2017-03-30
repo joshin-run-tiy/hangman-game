@@ -81,6 +81,11 @@ GAME OVER/WIN
         this.value = '';
     };
 
+
+
+/*+++++++++++++++++++++++++++++FUNCTION+++++++++++++++++++++++++++++++*/
+
+
     /* main guess function when user clicks #guess */
     document.getElementById('hangman').onsubmit = function (e) {
         if (e.preventDefault) e.preventDefault();
@@ -139,4 +144,10 @@ GAME OVER/WIN
         }
         return false;
     };
+
+
+/*++++++++++++++++++++++++END FUNCTION+++++++++++++++++++++++++++++++*/
+
+
+
 }());
