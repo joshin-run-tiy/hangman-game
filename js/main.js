@@ -15,7 +15,7 @@
   "who","oil","sits","cow","find","long","down","day","did","get",
   "come","made","may","part"
   ];
-
+  let lettersGuessed = [];
 /*=========================================
 INITIATES GAME PLAY - PASSES WORD LENGTH REQUEST
 =========================================*/
@@ -50,6 +50,41 @@ DISPLAYS DASHES THE LENGTH OF THE WORD
     }
     document.getElementById("msg").innerHTML = dashedLine;
   }
+
+  var line = displayDashes
+
+  function checkLetter (letter, word, dashedLine) {
+    console.log(letter);
+    console.log(word);
+    console.log(dashedLine);
+    let arr = dashedLine.split("");
+    let i = -1;
+    do {
+      // i++;
+      i = word.indexOf(letter, ++i);
+      arr[i] = letter;
+    } while (i != -1)
+    let joinArr = arr.join("");
+    console.log(joinArr);
+    return joinArr;
+  }
+
+  // checkLetter('p','pepper','______')
+  // checkLetter('p','apple','___l_')
+
+
+  let guessButton = document.getElementById("guess-button");
+  guessButton.addEventListener('click', function () {
+    let guessInput = document.getElementById("letter-box").value;
+    console.log(guessInput.toLowerCase());
+    guessedArr(guessInput);
+  });
+  function guessedArr(letter) {
+    lettersGuessed.push(letter);
+    document.getElementById("letter-box").innerHTML = lettersGuessed.join("・");
+  }
+
+
 
   // return {
   //   newGame: newGame,

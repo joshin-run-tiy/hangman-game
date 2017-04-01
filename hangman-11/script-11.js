@@ -59,18 +59,18 @@
 // }
 
   //
-  //
-  // let guessButton = document.getElementById("guess-button");
-  // guessButton.addEventListener('click', function () {
-  //   let guessInput = document.getElementById("letter-box").value;
-  //   console.log(guessInput.toLowerCase());
-  //   // guessedArr(guessInput.toUpperCase());
-  //   function guessedArr(letter) {
-  //     let lettersGuessed = [];
-  //     let guessUpper = guessInput.toUpperCase();
-  //     lettersGuessed.push(guessUpper);
-  //     document.getElementById("guessed-letter-box").innerHTML = lettersGuessed.join(" ");
-  //   }
+
+  let guessButton = document.getElementById("guess-button");
+  guessButton.addEventListener('click', function () {
+    let guessInput = document.getElementById("letter-box").value;
+    console.log(guessInput.toLowerCase());
+    // guessedArr(guessInput.toUpperCase());
+    function guessedArr(letter) {
+      let lettersGuessed = [];
+      let guessUpper = guessInput.toUpperCase();
+      lettersGuessed.push(guessUpper);
+      document.getElementById("guessed-letter-box").innerHTML = lettersGuessed.join(" ");
+    }
   // // });
   // let input = guessInput.toLowerCase();
   //   if (typeof input !== "string" || input.length != 1) {
