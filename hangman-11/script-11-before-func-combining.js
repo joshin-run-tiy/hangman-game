@@ -46,14 +46,13 @@ Simple Hangman's Word Chooser Code
     });
 
     function displayDashes(length) {
-
       for (var i=0; i < length; i++) {
         dashedLine += "_";
       }
       document.getElementById("msg").innerHTML = dashedLine;
       console.log(dashedLine);
       return dashedLine;
-    }
+    };
 
     let guessButton = document.getElementById("guess-button");
     guessButton.addEventListener('click', function () {
