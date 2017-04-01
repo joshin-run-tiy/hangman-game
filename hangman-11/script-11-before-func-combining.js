@@ -39,21 +39,21 @@ Simple Hangman's Word Chooser Code
 /*=======================================*/
     /* choose a word */
     let newGame = document.querySelector('button#new-game');
-    newGame.addEventListener('click', function newGame() {
+    let newGameDashedLine = newGame.addEventListener('click', function newGame() {
       word = commonWords[Math.floor(Math.random() * 100)];
       console.log(word);
       displayDashes(word.length);
-    });
-
     function displayDashes(length) {
       for (var i=0; i < length; i++) {
         dashedLine += "_";
       }
-      document.getElementById("msg").innerHTML = dashedLine;
-      console.log(dashedLine);
-      return dashedLine;
-    };
 
+      return dashedLine;
+    }
+  };
+
+  document.getElementById("msg").innerHTML = newGameDashedLine;
+  console.log(newGameDashedLine);
     let guessButton = document.getElementById("guess-button");
     guessButton.addEventListener('click', function () {
       let guessInput = document.getElementById("letter-box").value;

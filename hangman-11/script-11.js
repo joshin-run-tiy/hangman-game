@@ -24,66 +24,74 @@
     guessed: ' already guessed, please try again...',
     validLetter: 'Please enter a letter from A-Z'
   };
+  function passedThrough(x) {
+    document.getElementById("msg").innerHTML = dashedLine;
+    console.log(dashedLine);
+    return dashedLine;
+  };
   /* end config options */
   let letterGuessed = letterMatched = '';
   let numLettersMatched = 0;
   /* choose a word */
   let newGameQuery = document.querySelector('button#new-game');
-
   newGameQuery.addEventListener('click', function newGame() {
     word = commonWords[Math.floor(Math.random() * 100)];
     console.log(word);
     for (var i=0; i < word.length; i++) {
       dashedLine += "_";
-      document.getElementById("msg").innerHTML = dashedLine;
+      passThrough(dashedLine);
       // newGameQuery.removeEventListener('click', newGame, false);
-      pass(dashedLine);
     }
-  });
+    // function passThrough(dashedLine){
+    //   return dashedLine;
+    // };
+});
 
-function pass(x) {
-  var obj = {
-    passed: x
-  }
-  return obj;
-}
+// return true;
 
+})();
+//
+// function pass(x) {
+//   var obj = {
+//     passed: x
+//   }
+//   return obj;
+// }
 
-
-  let guessButton = document.getElementById("guess-button");
-  guessButton.addEventListener('click', function () {
-    let guessInput = document.getElementById("letter-box").value;
-    console.log(guessInput.toLowerCase());
-    // guessedArr(guessInput.toUpperCase());
-    function guessedArr(letter) {
-      let lettersGuessed = [];
-      let guessUpper = guessInput.toUpperCase();
-      lettersGuessed.push(guessUpper);
-      document.getElementById("guessed-letter-box").innerHTML = lettersGuessed.join(" ");
-    }
-  });
-  let input = guessInput.toLowerCase();
-    if (typeof input !== "string" || input.length != 1) {
-      console.log("not a valid entry!");
-      return false;
-    }
-    console.log(guessUpper);
-    console.log(word);
-    console.log(dashedLine);
-    let arr = dashedLine.split("");
-    let i = -1;
-    do {
-      i++;
-      i = word.indexOf(guessUpper, i);
-      arr[i] = guessUpper;
-    } while (i != -1)
-    let joinArr = arr.join("");
-    console.log(joinArr);
+  //
+  //
+  // let guessButton = document.getElementById("guess-button");
+  // guessButton.addEventListener('click', function () {
+  //   let guessInput = document.getElementById("letter-box").value;
+  //   console.log(guessInput.toLowerCase());
+  //   // guessedArr(guessInput.toUpperCase());
+  //   function guessedArr(letter) {
+  //     let lettersGuessed = [];
+  //     let guessUpper = guessInput.toUpperCase();
+  //     lettersGuessed.push(guessUpper);
+  //     document.getElementById("guessed-letter-box").innerHTML = lettersGuessed.join(" ");
+  //   }
+  // // });
+  // let input = guessInput.toLowerCase();
+  //   if (typeof input !== "string" || input.length != 1) {
+  //     console.log("not a valid entry!");
+  //     return false;
+  //   }
+  //   console.log(guessUpper);
+  //   console.log(word);
+  //   console.log(dashedLine);
+  //   let arr = dashedLine.split("");
+  //   let i = -1;
+  //   do {
+  //     i++;
+  //     i = word.indexOf(guessUpper, i);
+  //     arr[i] = guessUpper;
+  //   } while (i != -1)
+  //   let joinArr = arr.join("");
+  //   console.log(joinArr);
         // return joinArr;
  // }
-    // return true;
-  });
-})();
+
 
 
       // console.log(dashedLine);
