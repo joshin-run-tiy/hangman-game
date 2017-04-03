@@ -1,8 +1,8 @@
 ;(function onLoad() {
   // "use strict";
 
-  let word;
-  let dashedLine = [];
+
+  let dashedLine;
   /* start config options */
   let availableLetters = "abcdefghijklmnopqrstuvwxyz";
   let turns = 11;
@@ -24,6 +24,18 @@
     guessed: ' already guessed, please try again...',
     validLetter: 'Please enter a letter from A-Z'
   };
+
+  function newGame() {
+    let word = commonWords[Math.floor(Math.random() * 100)];
+    console.log(word);
+    for (var i=0; i < word.length; i++) {
+      dashedLine += "_";
+      // .map, the whole for
+      passThrough(dashedLine);
+    }
+
+  }
+
   function passedThrough(x) {
     document.getElementById("msg").innerHTML = dashedLine;
     console.log(dashedLine);
@@ -34,19 +46,10 @@
   let numLettersMatched = 0;
   /* choose a word */
   let newGameQuery = document.querySelector('button#new-game');
-  newGameQuery.addEventListener('click', function newGame() {
-    word = commonWords[Math.floor(Math.random() * 100)];
-    console.log(word);
-    for (var i=0; i < word.length; i++) {
-      dashedLine += "_";
-      passThrough(dashedLine);
-      // newGameQuery.removeEventListener('click', newGame, false);
-    }
-    // function passThrough(dashedLine){
-    //   return dashedLine;
-    // };
-});
+  newGameQuery.addEventListener('click', newGame);
 
+
+var joinArr = checkLetter(letter, word, dashedLine)
 // return true;
 
 })();

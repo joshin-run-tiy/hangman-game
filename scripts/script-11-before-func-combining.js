@@ -1,7 +1,7 @@
 ;(function () {
   // "use strict";
   let word;
-  let dashedLine = [];
+  let dashedLine;
 
   // function setup() {
     /* start config options */
@@ -128,8 +128,8 @@ GUESSING/SCOPE/OBJECT/EXPERIMENT
       return joinArr;
     }
 
-    // checkLetter('p','pepper','______')
-    // checkLetter('p','apple','___l_')
+    checkLetter('p','pepper','______')
+    checkLetter('p','apple','___l_')
 
 /*=========================================+++++++++++++++++++++++++++++++++=
 ******END******IN CLASS DO/WHILE LOOP REPLACING DASHES WITH LETTERS
