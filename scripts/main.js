@@ -4,6 +4,8 @@
 INITIAL SETUP
 ===========================*/
   /* start config options */
+  let word;
+  let dashedLine;
   let availableLetters = "abcdefghijklmnopqrstuvwxyz";
   let turns = 11;
   let userLettersGuessed = [];
@@ -64,12 +66,6 @@ function generateUnderscores() {
   return dashes.join("");
   }
 
-  // function onloadRestart() {
-  //   location.reload;
-  // return;
-  // }
-      /* Start game - should ideally check for existing functions attached to window.onload */
-  // window.onload = onloadRestart();
   let setupEvent = document.querySelector('button#new-game');
   let reset = document.querySelector('button#reset');
 
@@ -77,11 +73,12 @@ function generateUnderscores() {
     location.reload();
   }
 
-  setupEvent.addEventListener('click', function setup() {
+  dashedLine = setupEvent.addEventListener('click', function setup() {
     let output = generateUnderscores();
     messageOutput.innerHTML = output;
     return output;
   });
+
   reset.addEventListener('click', function () {
     reload();
   });
@@ -108,10 +105,32 @@ Turn/Letter Tally
 ===========================*/
   let guessButton = document.getElementById("guess-button");
   guessButton.addEventListener('click', function () {
-    let guessInput = document.getElementById("letter-box").value.toUpperCase();
-    tallyLetter(guessInput);
-    tallyTurn(guessInput);
+  let guessInput = document.getElementById("letter-box").value.toUpperCase();
+  tallyLetter(guessInput);
+  tallyTurn(guessInput);
+  if (typeof guessInput !== "string" || guessInput.length != 1) {
+    console.log("not a valid entry!");
+    return false;
+  }
+
+//  ===  scope issue concern
+  let word = selectWord();
+  console.log(word);
+  let dashedLine = generateUnderscores();
+  let dashedLineArray =
+  dashedLine.split("");
+  let i = -1;
+  do {
+    i++;
+    i = word.indexOf(guessInput, i);
+    dashedLineArray[i] = guessInput;
+  } while (i != -1)
+  let joinArr = dashedLineArray.join("");
+  console.log(joinArr);
+  messageOutput.innerHTML = joinArr;
   });
+
+// === end scope issue concern
 
   function tallyTurn(guessInput) {
     turns--;
@@ -126,6 +145,9 @@ Turn/Letter Tally
     // userLettersGuessed.push(guessInput);
     letterTally.innerHTML = userLettersGuessed;
   }
+
+
+
 
 
   // // var joinArr = checkLetter(letter, word, dashedLine)
