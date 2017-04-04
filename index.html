@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>Hangman 11</title>
     <!-- <link rel="stylesheet" href="./css/normalize.css"> -->
-    <link rel="stylesheet" href="./style-11.css">
-    <link rel="stylesheet" href="./reset-11.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/reset.css">
   </head>
   <body>
     <header id="header" class="flex-container">
@@ -15,24 +15,22 @@
       <div class="inner flex-container">
         <p id="msg" class="message-box flex-container">Word</p>
       </div>
-      <div id="button-box" class="flex-container">
-        <!-- <button id="new-game" onclick="newGame()" class="play-button flex-container">New Game</button> -->
+      <div class="button-box flex-container">
+        <button id="new-game" class="play-button flex-container">New Game</button>
+        <button id="reset" class="play-button flex-container">Reset</button>
         <!-- new input from simple -->
-                <input type="text" maxlength="1" minlength="1" name="letter-box" id="letter-box" placeholder="letter-box" />
-
-                <input id="guess-button" name="guess" type="submit" value="Guess" />
-        <!-- end simple example -->
-      <!-- <button id="guess-char" class="play-button flex-container">Guess</button> -->
-<!-- new input from simple -->
-        <!-- <input type="text" maxlength="1" minlength="1" name="letter-box" id="letter-box" placeholder="Guess a letter" />
-        <input id="guess-button" name="guess" type="submit" value="Guess" /> -->
-<!-- end simple example -->
+        <!-- <input type="text" maxlength="1" minlength="1" name="letter-box" id="letter-box" placeholder="letter-box" />
+        <input id="guess-button" class="guess-button" name="guess" type="submit" value="Guess" /> -->
+      </div>
+      <div class="button-box flex-container">
+        <input class="letter-box" type="text" maxlength="1" minlength="1" name="letter-box" id="letter-box" />
+        <input id="guess-button" class="guess-button" name="guess" type="submit" value="Guess" />
       </div>
     </div>
     <div class="flex-container letters-guessed">
       <!-- <div class="box-title"> -->
       <div>
-        <p>Letters Used</p>
+        <p class="letters-used">Letters Used</p>
       </div>
       <div class="guessed-letters-list">
         <p id="guessed-letter-box"></p>
@@ -41,7 +39,7 @@
         <p>Turns Remaining</p>
       </div>
       <div class="guessed-letters-list">
-        <p id="turns"></p>
+        <p id="turns" class="turns">11</p>
       </div>
       <div>
         <p>Blank Output</p>
@@ -51,11 +49,22 @@
       </div>
     </div>
   <!-- <script type="text/javascript" src="./script-11-before-func-combining.js"></script> -->
-  <script type="text/javascript" src="../js/main.js"></script>
+  <script type="text/javascript" src="./scripts/main.js"></script>
   <!-- <script type="text/javascript" src="./script-11b.js"></script> -->
   </body>
 </html>
+
+
+
 <!-- <div id="button-box" class="flex-container">
 <button id="button" onclick="chooseWord()" class="play-button flex-container">Generate Word</button>
 <button id="button-two" onclick="guess()" class="play-button flex-container">Guess</button>
 </div> -->
+
+
+<!-- end simple example -->
+<!-- <button id="guess-char" class="play-button flex-container">Guess</button> -->
+<!-- new input from simple -->
+<!-- <input type="text" maxlength="1" minlength="1" name="letter-box" id="letter-box" placeholder="Guess a letter" />
+<input id="guess-button" name="guess" type="submit" value="Guess" /> -->
+<!-- end simple example -->

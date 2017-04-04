@@ -67,9 +67,6 @@
     document.getElementById("msg").innerHTML = dashedLine;
   }
 
-  let newGameThing = document.querySelector('button#new-game');
-  let firstDashes = newGameThing.addEventListener('click', gamePlay.generateGame);
-  console.log(firstDashes);
 
 
   //event listener for new game
@@ -86,38 +83,6 @@
   //win message/lose message
   //out of turns message
 
-
-//   function newGame() {
-//     word = generateNum();
-//     console.log(word);
-//     displayDashes(word.length);
-//   }
-//
-// /*=========================================
-// GENERATES RANDOM NUMBER
-// =========================================*/
-//   function random() {
-//     return Math.floor(Math.random() * 100);
-//   }
-//
-// /*=========================================
-// GENERATES WORD
-// =========================================*/
-//   function generateNum() {
-//     let num = random();
-//     return commonWords[num];
-//   }
-//
-// /*=========================================
-// DISPLAYS DASHES THE LENGTH OF THE WORD
-// =========================================*/
-//   function displayDashes(length) {
-//     let dashedLine = [];
-//     for (var i=0; i < length; i++) {
-//       dashedLine += "_";
-//     }
-//     document.getElementById("msg").innerHTML = dashedLine;
-//   }
 
 
 })();
