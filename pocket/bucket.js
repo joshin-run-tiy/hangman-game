@@ -1,3 +1,24 @@
+function checkLetter(letter)
+      (letter, word, dashedLine) {
+        console.log(letter);
+        console.log(word);
+        console.log(dashedLine);
+
+        let arr = dashedLine.split("");
+        let i = -1;
+        do {
+          // i++;
+          i = word.indexOf(letter, ++i);
+          arr[i] = letter;
+        } while (i != -1)
+        let joinArr = arr.join("");
+        console.log(joinArr);
+        return joinArr;
+      }
+
+      checkLetter('p','pepper','______')
+      checkLetter('p','apple','___l_')
+
 /*=========================================
 VALIDATE CHARACTER (double, not letter, symbol, no guess.)
 =========================================*/
